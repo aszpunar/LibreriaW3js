@@ -12,7 +12,7 @@
 
 <body>
 
-    <div class="mostrarTodo" onclick="w3.show('*')">VOLVER A VER TODO</div>
+    <!-- <div class="mostrarTodo" onclick="w3.show('*')">VOLVER A VER TODO</div> -->
 
     <h1>Librería de JavaScript: W3.JS</h1>
     <div>
@@ -59,7 +59,7 @@
     </div>
 
     <div class="selectores">
-        <h2>Selectores</h2>
+        <h2 id="selectoresId">Selectores</h2>
         <p>Gracias a los selectores podemos seleccionar los diferentes elementos de HTML y realizar acciones sobre ellos
         </p>
         <h3>Sintaxis: w3.accion(selector)</h3>
@@ -114,9 +114,9 @@
         <button class="botonesEjemplos" onclick="w3.hide('[href]')">Va a desapracer todo con atributo href</button>
         <h5>("a[target=blank]")---Selecciona todos los a con adjetivo target=blank</h5>
         <div>
-            <a class="example" target="_blank" href="google.es">Enlace con target=blank</a>
+            <a class="example" target="_blank" >Enlace con target=blank</a>
             <br>
-            <a class="example" href="google.es" target="_self"> Soy un enlace target=self</a>
+            <a class="example"target="_self"> Soy un enlace target=self</a>
 
         </div>
         <button class="botonesEjemplos" onclick="w3.hide('a[target=_blank]')">Va a desapracer enlace con
@@ -136,38 +136,284 @@
         </ul>
 
 
-        <button class="botonesEjemplos" onclick="w3.hide('li:first-child')">Va a desapracer el primer li de cada lista</button>
+        <button class="botonesEjemplos" onclick="w3.hide('li:first-child')">Va a desapracer el primer li de cada
+            lista</button>
 
 
     </div>
-    <br><br><br><br>
-    <br><br><br><br>
-    <br><br><br><br>
-    <br><br><br><br>
-    <br><br><br><br>
-    <br><br><br><br>
-    <br><br><br><br>
-    <br><br><br><br>
-    <br><br><br><br>
-    <br><br><br><br>
-    <br><br><br><br>
-    <br><br><br><br>
-    <br><br><br><br>
-    <br><br><br><br>
-    <br><br><br><br>
-    <br><br><br><br>
-    <br><br><br><br>
-    <br><br><br><br>
-    <br><br><br><br>
-    <br><br><br><br>
-    <br><br><br><br>
-    <br><br><br><br>
-    <br><br><br><br>
-    <br><br><br><br>
-    <br><br><br><br>
-    <br><br><br><br>
-    <br><br><br><br>
-    <br><br><br><br>
+
+    <div>
+        <h2>Filtrar</h2>
+        <p>Es posible filtrar elementos utilizadno el siguiente método</p>
+        <h4>w3.filterHTML(selector)</h4>
+        <h3>Filtrar valores en una lista</h3>
+        <p>Introduce el término de búsqueda:</p>
+        <input oninput="w3.filterHTML('#alumnos', 'li', this.value)" placeholder="¿Qué alumno buscas?">
+
+        <ul id="alumnos">
+            <li>Alicja Szpunar</li>
+            <li>Dania Fernandez</li>
+            <li>Pablo Martin</li>
+            <li>Francisco Javier Otero</li>
+            <li>Pablo Utrilla</li>
+            <li>Raul Hernandez</li>
+            <li>Sergio de Pablo</li>
+            <li>Cristian Perez</li>
+            <li>Daniel Delgado</li>
+            <li>Alvaro Higuera</li>
+            <li>Alvaro Zuniga</li>
+            <li>Laura Pacho</li>
+        </ul>
+        <h3>Filtrar valores en una tabla</h3>
+        <p>Introduce el término de búsqueda:</p>
+        <input oninput="w3.filterHTML('#cosas','.elemento' , this.value)" placeholder="¿Qué cosa buscas?">
+        <table id="cosas">
+            <tr>
+                <th>Cosa</th>
+                <th>Unides</th>
+                <th>Precio/unidad</th>
+            </tr>
+            <tr class="elemento">
+                <td>Sillas</td>
+                <td>20</td>
+                <td>30€</td>
+            </tr>
+            <tr class="elemento">
+                <td>Mesas</td>
+                <td>200</td>
+                <td>1,5€</td>
+            </tr>
+            <tr class="elemento">
+                <td>Pupitres</td>
+                <td>400</td>
+                <td>40€</td>
+            </tr>
+        </table>
+    </div>
+
+    <div>
+        <h2>Mostrar y ocultar</h2>
+        <p>La parte de ocultar esta hecha en <a href="#selectoresId">selectores</a> </p>
+        <p>Ahora veremos la parte de mostrar y al igual que ocultar se pueden utilizar todos los selectores ahí
+            mencionados</p>
+        <button onclick="w3.show('.claseM')">Mostrar los elementos con clase claseM </button>
+        <button onclick="w3.show('#idDivM')">Mostrar el div con id idDivM</button>
+        <div class="mostrarGeneral">
+            <div class="mostrarDiv claseM">Hola mi clase es claseM</div>
+            <div class="mostrarDiv" id="idDivM">Mi id es idDivM</div>
+            <div class="mostrarDiv claseM">Hola mi clase es claseM</div>
+        </div>
+        <h3>Mostrar y ocultar en un mismo botón</h3>
+        <button style="display: block; margin: auto;width: 120px;"
+            onclick="w3.toggleShow('.mostrarocultar')">Mostrar/Ocultar</button>
+        <div class='mostrarocultar'>
+            Hola ahora me ves pero con el botón de arriba vas a dejar de hacerlo a no ser que le vuelvas a pulsar y así
+            continuamente
+        </div>
+
+    </div>
+
+    <div>
+        <h2>Añadir estilos</h2>
+        <p>Podemos añadir estilos de forma interactiva con el siguiente método</p>
+        <h3 style="font-size: 15px;">w3.addStyle(selector, 'propiedad','valor')</h3>
+        <div style="min-height: 50px;display: flow-root;background-color: rgba(240, 248, 255, 0);margin-bottom: 10px;">
+            <button class="claseB" onclick="w3.addStyle('#idCambios','background-color','yellow')">Añadir fondo
+                amarillo</button>
+            <button class="claseB" onclick="w3.addStyle('#idCambios','font-family','serif')">Cambiar familia
+                fuente</button>
+            <button class="claseB" onclick="w3.addStyle('#idCambios','font-size','60px')">Cambiar tamaño de
+                letra</button>
+        </div>
+        <p id="idCambios">Modificame</p>
+    </div>
+
+    <div>
+        <h2>Añadir clases</h2>
+        <p>Nos permite añadir clases en tiempo real a cualquier elemento con el siguiente método:</p>
+        <h3>w3.addClass(selector,'clase')</h3>
+        <p>Podemos también añadir varias clases a la vez</p>
+        <h3>w3.addClass(selector,'clase1 clase2 clase3')</h3>
+        <button onclick="w3.addClass('#atributos','nuevaClase1 nuevaClase2'),aniadimos()">Añadir clases</button>
+        <div onload="aniadimos()" class="claseVieja" id="atributos"
+            style="margin-top: 20px;min-height: 50px;background-color: rgba(255, 0, 0, 0.452);">
+            Tengo las siguientes clases:
+            <div id="clasesId">
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h2>Eliminar clases</h2>
+        <p>Nos permite añadir clases en tiempo real a cualquier elemento con el siguiente método:</p>
+        <h3>w3.removeClass(selector,'clase')</h3>
+        <p>Podemos también eliminar varias clases a la vez</p>
+        <h3>w3.removeClass(selector,'clase1 clase2 clase3')</h3>
+        <button onclick="w3.removeClass('#atributosMenos','nuevaClase1')">Eliminamos clases</button>
+        <div class="claseVieja nuevaClase1 nuevaClase2" id="atributosMenos" style="margin-top: 20px;min-height: 50px;">
+            Para poder verlo inspeccionamos el código. Pero de todas maneras el fondo de esto es rojo porque la clase
+            claseNueva1 tiene el color de fondo rojo al dar al boton esta clase se borra y el fondo desaparece.
+        </div>
+    </div>
+    </div>
+
+    <div>
+        <h2>Añadir y borrar clase en un botón</h2>
+        <p>ALternamos entre borar o añadir la clase1 dependiendo de si existe o no </p>
+        <h3>w3.toggleClass(selector, 'clase1')</h3>
+        <p>Alternamos entre clase1 y la clase1nueva</p>
+        <h3>w3.toggleClass(selector,'clase1', 'clase1nueva')</h3>
+        <button onclick="w3.toggleClass('#alternarId', 'clasePrimera')">Alternar clase</button>
+        <div style="min-height: 20px;margin-top: 20px; margin-bottom: 20px; padding: 10px;" id="alternarId"
+            class="clasePrimera">
+            Este div tiene una clasePrimera que tiene asignado un color de fondo si vamos dando al botón vemos como el
+            color va variando
+        </div>
+
+
+        <button onclick="w3.toggleClass('#alternarId2', 'clasePrimera','claseSegunda')">Alternar clase</button>
+        <div style="min-height: 20px;margin-top: 20px; margin-bottom: 20px; padding: 10px;" id="alternarId2"
+            class="clasePrimera">
+            Este div tiene una clasePrimera que tiene asignado un color de fondo verde si vamos dando al botón vemos
+            como el color va variando porque va variando la clase que tiene
+        </div>
+    </div>
+
+    <div>
+        <h2>Ordenar elementos</h2>
+        <p>Podemos ordenar elementos con el siguiente método</p>
+        <h4>w3.sortHTML(selector)</h4>
+        <h3>Ordenar listas</h3>
+        <button onclick="w3.sortHTML('#ordenarID','li')">Ordenar</button>
+        <ul id="ordenarID">
+            <li>Zapato</li>
+            <li>Balcon</li>
+            <li>Garganta</li>
+            <li>Alicante</li>
+        </ul>
+        <h3>Ordenar tablas</h3>
+        <p>Aqui para ordenar debemos de dar o en Futbolista para que nos ordene según los nombres de futbolistas o en
+            País para ordenarlo por los paises</p>
+        <table id="tabla1">
+            <tr>
+                <th style="background-color: rgba(255, 0, 0, 0.411);"
+                    onclick="w3.sortHTML('#tabla1','.elemento', 'td:nth-child(1)')">Futbolista</th>
+                <th style="background-color: rgba(255, 0, 0, 0.411);"
+                    onclick="w3.sortHTML('#tabla1','.elemento', 'td:nth-child(2)')">País</th>
+            </tr>
+            <tr class="elemento">
+                <td>Makaay</td>
+                <td>Holanda</td>
+            </tr>
+            <tr class="elemento">
+                <td>Bebeto</td>
+                <td>Brasil</td>
+            </tr>
+            <tr class="elemento">
+                <td>Fran</td>
+                <td>España</td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <h2>Carousell de imágenes</h2>
+        <p>Podemos hacer que las imágenes vayan cambiando automaticamente con el siguiente método</p>
+        <h3>w3.slideshow(clase,tiempo)</h3>
+        <p>El tiempo es opcional y para que no se cambien se pondría 0</p>
+        <div>
+            <img class="imagenes" src="img1.jpg" alt="">
+            <img class="imagenes" src="img2.jpg" alt="">
+            <img class="imagenes" src="img3.jpg" alt="">
+            <img class="imagenes" src="img4.jpg" alt="">
+        </div>
+
+        <p>Ahora un slideshow con botones</p>
+        <p style="background-color: rgba(255, 0, 0, 0.39);">No entiendo por qué al principio no sale imagen, solo si le
+            das dos veces a algún botón aparecen</p>
+        <div style="margin-top: 20px; margin-bottom: 20px;">
+            <img class="clase1" src="img1.jpg">
+            <img class="clase1" src="img2.jpg">
+            <img class="clase1" src="img4.jpg">
+            <img class="clase1" src="img3.jpg">
+
+            <p> <button onclick=" miPaseDiapositivas.previous()">Anterior</button> <button
+                    onclick=" miPaseDiapositivas.next()">Siguiente</button> </p>
+        </div>
+    </div>
+
+    <div>
+        <h2>Importar HTML</h2>
+        <p>Podemos importar html de ficheros externos añadiendo al elemento en concreto el siguiente método</p>
+        <h3>w3-include-html="importar.html"</h3>
+        <p>y añadiendo en el script el siguiente método</p>
+        <h3>w3.includeHTML()</h3>
+        <!-- <div w3-include-html="importar.html" style="min-height: 100px;"></div> -->
+        <!-- <button onclick="w3.includeHTML()">Importar</button> -->
+        <hr>
+        <p w3-include-html="importar.html">No me funciona, no entiendo por qué</p>
+        <script> w3.includeHTML(); </script>
+    </div>
+
+    <div>
+        <h2>Mostrando objetos JavaScript</h2>
+        <div id="hola1"> {{Jugador}} {{Club}} </div>
+        <script>
+            var objeto1 = { "Jugador": "Valerón", "Club": "Deportivo de La Coruña" };
+            w3.displayObject("#hola1", objeto1); 
+        </script>
+        <script> var objetoAutores = { "autores": [{ "NombreAutor": "Santiago Posteguillo", "Pais": "España" }, { "NombreAutor": "Javier Negrete", "Pais": "España" }, { "NombreAutor": "Santiago Castellanos", "Pais": "España" }] }; </script>
+        <hr>
+        <table id="identificador1">
+            <tr>
+                <th>Autor</th>
+                <th>País</th>
+            </tr>
+            <tr w3-repeat="Autores">
+                <td>{{NombreAutor}}</td>
+                <td>{{Pais}}</td>
+            </tr>
+        </table>
+
+        <script> w3.displayObject("identificador1", objetoAutores); </script>
+        <hr>
+        <select id="identificador1">
+            <option w3-repeat="x in coches">{{x}}</option>
+        </select>
+        <script>
+
+            w3.displayObject("identificador1", { "coches": ["Skoda", "Renault", "Seat"] }); </script>
+        <hr>
+        </style>
+        <script src="https://www.w3schools.com/lib/w3.js"></script>
+        <script> var objetoAutores = {
+                "autores": [{ "NombreAutor": "Santiago Posteguillo", "Color": "rojo" }, {
+                "NombreAutor":"Javier Negrete","Color":"verde"}, {"NombreAutor":"Santiago Castellanos","Color":"azul"} ]}; </script>
+
+        <body>
+            <table id="identificador1">
+                <tr w3-repeat="autores" class="{{Color}}">
+                    <td>{{NombreAutor }}</td>
+                </tr>
+            </table>
+            <script> w3.displayObject("#identificador1", objetoAutores); </script>
+    </div>
+
+    <script type="text/javascript">
+            w3.slideshow('.imagenes', 3000);
+            miPaseDiapositivas = w3.slideshow(".clase1", 0);
+            function aniadimos() {
+                var divContenedor = document.getElementById("atributos");
+                console.log(divContenedor)
+            var susAtributos = divContenedor.attributes[1].nodeValue;
+                console.log(susAtributos)
+            document.getElementById("clasesId").innerHTML = susAtributos;
+            }
+        var divContenedor = document.getElementById("atributos");
+            console.log(divContenedor)
+        var susAtributos = divContenedor.attributes[1].nodeValue;
+            console.log(susAtributos)
+        document.getElementById("clasesId").innerHTML = susAtributos;   
+    </script>
 </body>
 
 </html>

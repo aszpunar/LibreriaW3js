@@ -1,24 +1,23 @@
-
-
-div.mostrarTodo{
+/* div.mostrarTodo {
     height: 60px;
     width: 60px;
     position: fixed;
     background-color: hotpink;
     left: 0;
     top: 50%;
-    
-}
+} */
 
-body{
+body {
     font-family: 'Courier New', Courier, monospace;
 }
-.dentro, .imgLista{
+
+.dentro, .imgLista {
     list-style: none;
     margin-left: -70px;
 }
-h1{
-display: block;
+
+h1 {
+    display: block;
     width: 80%;
     margin-left: auto;
     margin-right: auto;
@@ -29,27 +28,31 @@ display: block;
     font-size: 20px;
 }
 
-div{
+div {
     width: 80%;
     background-color: rgba(80, 232, 255, 0.318);
-    margin: auto ;
-    
+    margin: auto;
 }
-div p{
+
+div p {
     text-align: center;
 }
-img{
+
+img {
     max-width: 100%;
 }
-h2{
+
+h2 {
     background-color: rgba(27, 216, 245, 0.318);
     position: sticky;
     top: 0%;
 }
-.selectores{
+
+.selectores {
     display: flow-root;
 }
-.elementoOculto, .elementoOcultoSpan{
+
+.elementoOculto, .elementoOcultoSpan {
     display: block;
     float: left;
     width: 25%;
@@ -60,12 +63,86 @@ h2{
     background-color: rgb(0, 162, 255);
     margin-top: 20px;
 }
-.botonesEjemplos{
+
+.botonesEjemplos {
     display: block;
     width: 200px;
     margin: auto;
 }
-.contenedorOcultar{
+
+.contenedorOcultar {
     min-height: 100px;
     background-color: rgba(0, 255, 255, 0);
+}
+
+table {
+    width: 100%;
+    border: 2px solid black;
+}
+
+td {
+    border: 2px solid black;
+    text-align: center;
+}
+
+input {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+.mostrarGeneral {
+    min-height: 120px;
+    display: flow-root;
+}
+
+button.claseB {
+    display: inline-block;
+    width: 33%;
+    float: left;
+}
+
+#idCambios {
+    display: block;
+    margin-top: 10px;
+}
+
+.mostrarDiv {
+    display: none;
+    float: left;
+    width: 33%;
+    border: 2px solid black;
+    box-sizing: border-box;
+    min-height: 100px;
+    margin-top: 20px;
+}
+
+.nuevaClase1 {
+    background-color: rgba(255, 0, 0, 0.452);
+}
+
+.clasePrimera {
+    background-color: aquamarine;
+}
+
+.claseSegunda {
+    background-color: red;
+}
+
+div img {
+    margin: auto;
+    display: block;
+}
+
+.rojo {
+    background-color: red
+}
+
+.verde {
+    background-color: green
+}
+
+.azul {
+    background-color: blue
 }
