@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="estilos.css">
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <title>Librería w3js</title>
+</head>
+
+<body>
+
+    <div class="mostrarTodo" onclick="w3.show('*')">VOLVER A VER TODO</div>
+
+    <h1>Librería de JavaScript: W3.JS</h1>
+    <div>
+        <h2>¿Qué es?</h2>
+        <p>Librería de JavaScript diseñanada para simplificar el desarrollo WEB.</p>
+        <ul>
+            <li>Fácil de aprender y aplicar</li>
+            <li>Orientada al desarrollo rápido de aplicaciones</li>
+            <li>Es multidispositivos</li>
+            <li>Gratutito y no requiere licencias</li>
+        </ul>
+        <p> Se pueden realizar multitud de tareas en pocos minutos:</p>
+        <ul>
+            <li>Realizar galería de imagenes con carrusel</li>
+            <li>Permite importar código HTML de otras webs</li>
+            <li>Ordenar el contenido de cualquier elemento HTML</li>
+            <li>Filtrar contenido de cualquier elemento HTML</li>
+            <li>Mostrar objetos de JavaScript en HTML</li>
+            <li>Leer datos de servidores Web</li>
+            <li>Ocultar y añadir clases a cualquier elemento</li>
+            <li>Añadir CSS a cualquier elemento HTML</li>
+        </ul>
+    </div>
+
+    <div>
+        <h2>¿Cómo añadir esta librería?</h2>
+        <ol>
+            <li>Añadiendo un link al recurso en internet:
+                <ul class="dentro">
+                    <li>
+                        <img src="uno.jpg" alt="">
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Descargando el fichero de la red y utilizandolo con total libertad
+                <ul class="dentro">
+                    <li>
+                        <img src="dos.jpg" alt="">
+                    </li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+    <div class="selectores">
+        <h2>Selectores</h2>
+        <p>Gracias a los selectores podemos seleccionar los diferentes elementos de HTML y realizar acciones sobre ellos
+        </p>
+        <h3>Sintaxis: w3.accion(selector)</h3>
+        <h4>Ocultar elementos según</h4>
+        <button onclick="w3.hide('span')">Elemento</button>
+        <button onclick="w3.hide('.clase1')">Clase</button>
+        <button onclick="w3.hide('#identificador1')">Identificador</button>
+        <div class="contenedorOcultar">
+            <div class="elementoOculto clase1"> Clase1</div>
+            <div class="elementoOculto" id="identificador1">Id</div>
+            <div class="elementoOculto clase1"> Clase1</div>
+            <span class="elementoOcultoSpan">Span</span>
+        </div>
+
+
+        <h4>Otros selectores</h4>
+        <h5>("*")---Selecciona todos los elementos del documento</h5>
+        <p style="background-color: rgba(255, 0, 0, 0.575);">Cuidado</p>
+        <p>Si presionas el siguiente boton desaparecerá todo y tendrás que recargar la página</p>
+        <button class="botonesEjemplos" onclick="w3.hide('*')">¿Seguro?</button>
+        <h5>(this)---Selecciona el elemento actual</h5>
+        <button class="botonesEjemplos" onclick="w3.hide(this)">Voy a desaparecer</button>
+        <h5>("p.intor")---Selecciona los p con clase intro</h5>
+        <p class="intro">Soy un p con clase intro</p>
+        <a class="intro" style="display: block; margin: auto;margin-bottom: 20px; text-align: center;"> Soy un enlace
+            con la clase intro</a>
+        <button class="botonesEjemplos" onclick="w3.hide('p.intro')">Va a desapracer solo el parrafo</button>
+        <h5>("div p")---Selecciona los p dentro de div</h5>
+        <div>
+            <p>ADIOS</p>
+        </div>
+        <button class="botonesEjemplos" onclick="w3.hide('div p')">Va a desapracer el parrafo</button>
+        <h5>("div p:first-child")---Selecciona el primer hijo p de un div</h5>
+        <div>
+            <p>
+                Soy el primer párrafo dentro de un div
+            </p>
+
+            <p>
+                Soy el segundo párrafo dentro de un div
+            </p>
+        </div>
+        <button class="botonesEjemplos" onclick="w3.hide('div p:first-child')">Va a desapracer el primer
+            parrafo</button>
+        <h5>("[href]")---Selecciona todos los elementos que tengan atributo href</h5>
+        <div>
+            <a class="example" href="gogle.es">Enlace a Google con href</a>
+            <br>
+            <a class="example"> Soy un enlace sin href</a>
+
+        </div>
+        <button class="botonesEjemplos" onclick="w3.hide('[href]')">Va a desapracer todo con atributo href</button>
+        <h5>("a[target=blank]")---Selecciona todos los a con adjetivo target=blank</h5>
+        <div>
+            <a class="example" target="_blank" href="google.es">Enlace con target=blank</a>
+            <br>
+            <a class="example" href="google.es" target="_self"> Soy un enlace target=self</a>
+
+        </div>
+        <button class="botonesEjemplos" onclick="w3.hide('a[target=_blank]')">Va a desapracer enlace con
+            target=blank</button>
+        <h5>(li:nth-child(1))---Selecciona el primer li de cada jerarquia</h5>
+        <ol>
+            <li>Elemento 1 -Voy a desaparecer</li>
+            <li>Elemento 2</li>
+            <li>Elemento 3</li>
+            <li>Elemento 4</li>
+        </ol>
+        <ul>
+            <li>Elemento 1 -Voy a desaparecer</li>
+            <li>Elemento 2</li>
+            <li>Elemento 3</li>
+            <li>Elemento 4</li>
+        </ul>
+
+
+        <button class="botonesEjemplos" onclick="w3.hide('li:first-child')">Va a desapracer el primer li de cada lista</button>
+
+
+    </div>
+    <br><br><br><br>
+    <br><br><br><br>
+    <br><br><br><br>
+    <br><br><br><br>
+    <br><br><br><br>
+    <br><br><br><br>
+    <br><br><br><br>
+    <br><br><br><br>
+    <br><br><br><br>
+    <br><br><br><br>
+    <br><br><br><br>
+    <br><br><br><br>
+    <br><br><br><br>
+    <br><br><br><br>
+    <br><br><br><br>
+    <br><br><br><br>
+    <br><br><br><br>
+    <br><br><br><br>
+    <br><br><br><br>
+    <br><br><br><br>
+    <br><br><br><br>
+    <br><br><br><br>
+    <br><br><br><br>
+    <br><br><br><br>
+    <br><br><br><br>
+    <br><br><br><br>
+    <br><br><br><br>
+    <br><br><br><br>
+</body>
+
+</html>
